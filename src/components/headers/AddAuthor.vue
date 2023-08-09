@@ -4,7 +4,11 @@
       <AuthorIcon />
     </div>
     <div>
-      <input class="green text-2xl md:text-5xl mb-3 w-full" placeholder="Author`s name" v-model="author" />
+      <input
+        class="text-lg md:text-2xl mb-3 w-full bg-transparent hover:border-b-2 focus-visible:border-b focus-visible:outline-none py-3"
+        placeholder="Author`s name"
+        v-model="author"
+      />
       <div class="flex gap-6">
         <button
           class="rounded-lg ring-2 ring-orange-900 py-2 px-4 mt-2 hover:ring-3 hover:ring-orange-700 ease-out duration-200 hover:font-semibold"
