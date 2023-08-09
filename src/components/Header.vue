@@ -1,30 +1,17 @@
 <template>
   <header>
-    <div class="flex items-center">
-      <div class="mx-3 max-w-[75px] md:me-6 md:max-w-[100px] xl:max-w-[150px]">
-        <BooksIcon />
-      </div>
-      <div class="greetings">
-        <div class="green text-2xl md:text-5xl mb-3">{{ title }}</div>
-        <button
-          class="rounded-lg ring-2 ring-green-900 py-2 px-4 mt-2 hover:ring-4 hover:ring-green-700 ease-out duration-200 hover:font-semibold"
-        >
-          Add Author
-        </button>
-      </div>
-
-      <!-- <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
-    </div>
+    <MainHeader v-if="store.currentHeader === 'main'" />
+    <AddAuthorHeader v-else-if="store.currentHeader === 'add-author'" />
   </header>
 </template>
 
 <script setup lang="ts">
-import BooksIcon from './icons/IconBooks.vue'
+import MainHeader from './headers/Main.vue'
+import AddAuthorHeader from './headers/AddAuthor.vue'
+import { useHeaderStore } from '../stores/headers'
 
-const title = 'My Library'
+const store = useHeaderStore()
+
 </script>
 
 <style scoped>
