@@ -4,10 +4,10 @@
       <BooksIcon />
     </div>
     <div>
-      <div class="green text-2xl md:text-5xl mb-3">{{ title }}</div>
-      <RouterLink to="/edit/author" tag='button'>
+      <div class="text-primary text-2xl md:text-5xl mb-3">{{ title }}</div>
+      <RouterLink to="/edit/author" class='router-link'>
         <button
-          class="rounded-lg ring-2 ring-green-900 py-2 px-4 mt-2 hover:ring-3 hover:ring-green-700 ease-out duration-200 hover:font-semibold"
+          class="rounded-lg ring-2 ring-green-900 py-2 px-4 mt-2 hover:ring-3 hover:ring-green-700 ease-out duration-300 hover:font-semibold"
           @click="changeHeader()"
         >
           Add Author
