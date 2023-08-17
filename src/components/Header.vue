@@ -11,7 +11,6 @@ import AddAuthorHeader from './headers/AddAuthor.vue'
 import { useHeaderStore } from '../stores/headers'
 
 const store = useHeaderStore()
-
 </script>
 
 <style scoped>
