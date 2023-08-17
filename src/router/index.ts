@@ -18,4 +18,5 @@ const router = createRouter({
   ]
 })
 
+// TODO: implement interceptors to select the header based on route
 export default router
