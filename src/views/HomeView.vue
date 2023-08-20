@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AuthorList from '../components/AuthorList.vue'
+import AuthorList from '@/components/AuthorList.vue'
 </script>
 
 <template>
