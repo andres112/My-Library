@@ -1,5 +1,5 @@
 const baseAuthorUrl = 'https://openlibrary.org'
-const baseCoverUrl = 'https://covers.openlibrary.org/b/id/'
+const baseCoverUrl = 'https://covers.openlibrary.org/a/olid'
 
 export const useAuthor = () => {
   const getAuthor = async (author: string) => {
@@ -17,7 +17,11 @@ export const useAuthor = () => {
       }
       const firstAuthor = rawAuthorData.docs[0]
       const authorDetails = await fetch(`${baseAuthorUrl}/authors/${firstAuthor.key}.json`)
-      return await authorDetails.json()
+      const authorPhoto = await fetch(`${baseCoverUrl}/${firstAuthor.key}-L.jpg`)
+      return {
+        details: await authorDetails.json(),
+        image: await authorPhoto.blob()
+      }
     } catch (error) {
       console.log(error)
     }
