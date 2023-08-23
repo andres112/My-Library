@@ -1,6 +1,7 @@
 <template>
   <div class="h-[90vh] mt-10 divide-y divide-primary/25 overflow-y-auto">
-    <div v-if="store.authorList.length === 0" class="text-2xl">Author not found</div>
+    <div v-if="store.loading" class="text-2xl">Loading...</div>
+    <div v-if="store.authorList.length === 0 && !store.loading" class="text-2xl">Author not found</div>
     <div
       v-else
       class="grid grid-cols-3 my-4 items-center"

@@ -38,7 +38,7 @@ import { ref } from 'vue'
 
 const { setCurrentHeader } = useHeaderStore()
 const { getAuthors } = { ...useAuthor() }
-const { setAuthorList } = { ...useEditStore() }
+const { setAuthorList, setLoading } = { ...useEditStore() }
 const inputAuthor = ref()
 
 const changeHeader = () => {
@@ -46,10 +46,12 @@ const changeHeader = () => {
 }
 
 const getAuthorDetails = async () => {
+  setLoading(true);
   setAuthorList([])
   if (!inputAuthor.value) return
   const authors = await getAuthors(inputAuthor.value)
   if (!authors) return
   setAuthorList(authors)
+  setLoading(false);
 }
 </script>
