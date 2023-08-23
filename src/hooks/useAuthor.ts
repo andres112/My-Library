@@ -24,7 +24,8 @@ export const useAuthor = () => {
         authorList.push({
           key: author.key,
           name: author.name,
-          photo: authorDetails ? URL.createObjectURL(authorDetails) : ''
+          photo: authorDetails ? URL.createObjectURL(authorDetails) : '',
+          topWork: author.top_work
         })
       }
       return authorList as SummaryAuthor[]

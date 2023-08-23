@@ -46,6 +46,7 @@ const changeHeader = () => {
 }
 
 const getAuthorDetails = async () => {
+  setAuthorList([])
   if (!inputAuthor.value) return
   const authors = await getAuthors(inputAuthor.value)
   if (!authors) return

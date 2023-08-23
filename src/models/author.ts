@@ -2,6 +2,7 @@ export interface SummaryAuthor {
   key: string
   name: string
   photo: string
+  topWork: string
 }
 
 export interface Author {
