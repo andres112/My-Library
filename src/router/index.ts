@@ -8,19 +8,19 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView,
+    component: HomeView
   },
   {
     path: '/edit/author/:id',
     name: 'edit_author_id',
     props: true,
-    component: AuthorEdit,
+    component: AuthorEdit
   },
   {
     path: '/edit/author',
     name: 'edit_author',
     component: AuthorSearchList
-  },
+  }
 ]
 
 const router = createRouter({
@@ -37,6 +37,10 @@ router.beforeResolve(async (to, from, next) => {
       next()
       break
     case 'edit_author':
+      await headerStore.setCurrentHeader(HeaderType.ADD_AUTHOR)
+      next()
+      break
+    case 'edit_author_id':
       await headerStore.setCurrentHeader(HeaderType.ADD_AUTHOR)
       next()
       break

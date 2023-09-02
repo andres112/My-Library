@@ -20,11 +20,11 @@ export const useAuthor = () => {
       }
       // loop through the authors and fetch details for each
       for (const author of authors.docs.slice(0, 10)) {
-        const authorDetails = await getAuthorPhoto(author.key, 'S')
+        const authorPhoto = await getAuthorPhoto(author.key, 'S')
         authorList.push({
           key: author.key,
           name: author.name,
-          photo: authorDetails ? URL.createObjectURL(authorDetails) : '',
+          photo: authorPhoto ? URL.createObjectURL(authorPhoto) : '',
           topWork: author.top_work
         })
       }
