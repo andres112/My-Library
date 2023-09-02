@@ -9,20 +9,12 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
-    beforeEnter: (to, from, next) => {
-      console.log('beforeEnter', to, from)
-      next()
-    }
   },
   {
     path: '/edit/author/:id',
     name: 'edit_author_id',
     props: true,
     component: AuthorEdit,
-    beforeEnter: (to, from, next) => {
-      console.log('beforeEnter', to, from)
-      next()
-    }
   },
   {
     path: '/edit/author',
