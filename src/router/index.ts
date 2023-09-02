@@ -1,19 +1,34 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AuthorView from '../views/edit/AuthorView.vue'
+import AuthorSearchList from '../views/edit/AuthorSearchList.vue'
+import AuthorEdit from '../views/edit/AuthorEdit.vue'
 import { HeaderType, useHeaderStore } from '@/stores/headers'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    beforeEnter: (to, from, next) => {
+      console.log('beforeEnter', to, from)
+      next()
+    }
+  },
+  {
+    path: '/edit/author/:id',
+    name: 'edit_author_id',
+    props: true,
+    component: AuthorEdit,
+    beforeEnter: (to, from, next) => {
+      console.log('beforeEnter', to, from)
+      next()
+    }
   },
   {
     path: '/edit/author',
     name: 'edit_author',
-    component: AuthorView
-  }
+    component: AuthorSearchList
+  },
 ]
 
 const router = createRouter({

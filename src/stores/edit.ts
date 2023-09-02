@@ -11,8 +11,11 @@ export const useEditStore = defineStore('edit', {
     setAuthorList(list: SummaryAuthor[]) {
       this.authorList = list
     },
+    setCurrentEditAuthor(author: SummaryAuthor) {
+      this.currentEditAuthor = author
+    },
     setLoading(loading: boolean) {
       this.loading = loading
-    },
+    }
   }
 })
