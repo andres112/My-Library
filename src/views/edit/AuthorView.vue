@@ -4,11 +4,13 @@
     <div v-if="store.authorList.length === 0 && !store.loading" class="text-2xl">Author not found</div>
     <div
       v-else
-      class="grid grid-cols-3 my-4 items-center"
+      class="grid grid-cols-3 items-center cursor-pointer hover:bg-primary/25"
       v-for="author in store.authorList"
       :key="author.key"
     >
-      <img :src="author.photo" :alt="author.name" class="h-[75px] object-cover" />
+      <div class="my-2 ps-1">
+        <img :src="author.photo" :alt="author.name" class="h-[75px] object-cover" />
+      </div>
       <div class="text-lg col-span-2 flex flex-col">
         {{ author.name }} <small>{{ author.topWork }}</small>
       </div>
